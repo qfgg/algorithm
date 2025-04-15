@@ -11,12 +11,12 @@ class Solution {
             }
             if ((m == 0 || nums[m - 1] < nums[m]) &&
                     (m < nums.length - 1 && nums[m] <= nums[m + 1])) {
-                l = l + 1;
+                l = m + 1;
             } else if ((m > 0 && nums[m - 1] >= nums[m]) &&
                     (m == nums.length - 1 || nums[m] > nums[m + 1])) {
                 r = m;
             } else {
-                l = l + 1;
+                l = m + 1;
             }
         }
         return l;
