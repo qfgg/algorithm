@@ -14,7 +14,7 @@ class Solution {
         }
         Collections.sort(arr);
         int len = arr.size(), r = arr.get(0), m = r - k, l, lIdx = 0, rIdx = 0, mIdx = -1;
-        int toMove = count.get(arr.get(0)), base = 0, max = 1;
+        int toMove = count.get(arr.get(0)), base = 0, max = Math.min(numOperations, toMove);
         while (mIdx < len - 1) {
             if (rIdx >= len - 1 || arr.get(mIdx + 1) - m <= arr.get(rIdx + 1) - r)  {
                 if (rIdx < len - 1 && arr.get(mIdx + 1) - m == arr.get(rIdx + 1) - r) {
