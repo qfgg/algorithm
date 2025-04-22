@@ -1,9 +1,8 @@
 import java.util.*;
 
-
 class Solution {
     public void sortColors(int[] nums) {
-        int l = 0, r = nums.length - 1, i, tmp;
+        int l = 0, r = nums.length - 1, i = -1, tmp;
         while (l < r) {
             if (nums[l] == 0) {
                 l++;
@@ -14,7 +13,9 @@ class Solution {
                 continue;
             }
             if (nums[l] == 1 && nums[r] == 1) {
-                i = l + 1;
+                if (i == -1) {
+                    i = l + 1;
+                }
                 while (i < r) {
                     if (nums[i] == 0) {
                         nums[l] = 0;
